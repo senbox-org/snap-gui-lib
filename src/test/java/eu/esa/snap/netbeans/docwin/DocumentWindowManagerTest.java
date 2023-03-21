@@ -1,6 +1,6 @@
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
-import org.esa.snap.netbeans.docwin.DocumentWindowManager.Predicate;
+import eu.esa.snap.netbeans.docwin.DocumentWindowManager.Predicate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

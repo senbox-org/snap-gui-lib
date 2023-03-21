@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 import org.openide.util.*;
 import org.openide.util.actions.Presenter;
@@ -35,7 +35,7 @@ import java.util.Collection;
  * @since 1.0
  */
 public abstract class TileAction extends AbstractAction implements
-                                                        ContextAwareAction, LookupListener, PropertyChangeListener, Presenter.Menu {
+        ContextAwareAction, LookupListener, PropertyChangeListener, Presenter.Menu {
 
     private Lookup.Result<Tileable> tileableResult;
     private final Tileable defaultTileable;

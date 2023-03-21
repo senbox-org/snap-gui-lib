@@ -1,4 +1,4 @@
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
 import org.openide.windows.TopComponent;
 
@@ -13,7 +13,7 @@ import org.openide.windows.TopComponent;
  * associated document windows will be closed as well.
  * <p>
  * Only none or a single document window can be selected at a given time. Note that the selection of document windows
- * is independent from the activation of non-document {@code TopComponent} windows. But if a {@code TopComponent}
+ * is independent of the activation of non-document {@code TopComponent} windows. But if a {@code TopComponent}
  * implementing the {@code DocumentWindow} interface is activated, it will always also be the
  * {@link #isSelected() selected} one.
  *

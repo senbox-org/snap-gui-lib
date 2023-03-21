@@ -1,4 +1,4 @@
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TileUtilitiesTest {
     @Test
-    public void testComputeMatrixSizeForEqualAreaTiling() throws Exception {
+    public void testComputeMatrixSizeForEqualAreaTiling() {
         assertEquals(new Dimension(-1, -1), TileUtilities.computeMatrixSizeForEqualAreaTiling(0));
         assertEquals(new Dimension(1, 1), TileUtilities.computeMatrixSizeForEqualAreaTiling(1));
         assertEquals(new Dimension(2, 1), TileUtilities.computeMatrixSizeForEqualAreaTiling(2));
@@ -32,17 +32,14 @@ public class TileUtilitiesTest {
     }
 
     @Test
-    public void testStreaming() throws Exception {
+    public void testStreaming() {
         Object[] input = new Object[]{1, new Object[]{2, 3, 4,}, 5};
-        Object[] output = Arrays.stream(input).flatMap(new Function<Object, Stream<?>>() {
-            @Override
-            public Stream<?> apply(Object o) {
-                if (o instanceof Object[]) {
-                    Object[] objects = (Object[]) o;
-                    return Arrays.stream(objects);
-                } else {
-                    return Stream.of(o);
-                }
+        Object[] output = Arrays.stream(input).flatMap(o -> {
+            if (o instanceof Object[]) {
+                Object[] objects = (Object[]) o;
+                return Arrays.stream(objects);
+            } else {
+                return Stream.of(o);
             }
         }).toArray();
         assertEquals(5, output.length);

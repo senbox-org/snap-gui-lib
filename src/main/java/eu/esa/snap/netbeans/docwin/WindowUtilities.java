@@ -1,4 +1,4 @@
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
 import org.openide.windows.TopComponent;
 
@@ -56,7 +56,7 @@ public class WindowUtilities {
                 .flatMap(topComponent -> {
                     if (topComponent instanceof WindowContainer) {
                         return Stream.concat(Stream.of(topComponent),
-                                             ((WindowContainer) topComponent).getOpenedWindows().stream());
+                                ((WindowContainer) topComponent).getOpenedWindows().stream());
                     }
                     return Stream.of(topComponent);
                 })

@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -28,38 +28,38 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * The "Tile Vertically" action.
+ * The "Tile Evenly" action.
  *
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileVerticallyAction" )
-@ActionRegistration(displayName = "#CTL_TileVerticallyActionName", lazy = false)
+@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileEvenlyAction")
 @ActionReferences({
-        @ActionReference(path = "Menu/Window", position = 210),
-        @ActionReference(path = "Toolbars/Window Arrangement", position = 10 )
+        @ActionReference(path = "Menu/Window", position = 220),
+        @ActionReference(path = "Toolbars/Window Arrangement", position = 20)
 })
-@NbBundle.Messages("CTL_TileVerticallyActionName=Tile Vertically")
-public class TileVerticallyAction extends TileAction {
+@ActionRegistration(displayName = "#CTL_TileEvenlyActionName", lazy = false)
+@NbBundle.Messages("CTL_TileEvenlyActionName=Tile Evenly")
+public class TileEvenlyAction extends TileAction {
 
     @SuppressWarnings("UnusedDeclaration")
-    public TileVerticallyAction() {
+    public TileEvenlyAction() {
         this(Utilities.actionsGlobalContext());
     }
 
-    public TileVerticallyAction(Lookup actionContext) {
+    public TileEvenlyAction(Lookup actionContext) {
         super(actionContext);
-        putValue(NAME, Bundle.CTL_TileVerticallyActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileVertically20.png", false));
+        putValue(NAME, Bundle.CTL_TileEvenlyActionName());
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileEvenly20.png", false));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        getTileable().tileVertically();
+        getTileable().tileEvenly();
     }
 
     @Override
     public Action createContextAwareInstance(Lookup actionContext) {
-        return new TileVerticallyAction(actionContext);
+        return new TileEvenlyAction(actionContext);
     }
 }

@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -28,39 +28,38 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * The "Un-Tile" action.
+ * The "Tile Vertically" action.
  *
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileSingleAction" )
-@ActionRegistration(displayName = "#CTL_TileSingleActionName", lazy = false )
+@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileVerticallyAction")
+@ActionRegistration(displayName = "#CTL_TileVerticallyActionName", lazy = false)
 @ActionReferences({
-        @ActionReference(path = "Menu/Window", position = 230, separatorAfter = 235),
-        @ActionReference(path = "Toolbars/Window Arrangement", position = 30 )
+        @ActionReference(path = "Menu/Window", position = 210),
+        @ActionReference(path = "Toolbars/Window Arrangement", position = 10)
 })
-@NbBundle.Messages("CTL_TileSingleActionName=Tile Single")
-public class TileSingleAction extends TileAction {
+@NbBundle.Messages("CTL_TileVerticallyActionName=Tile Vertically")
+public class TileVerticallyAction extends TileAction {
 
     @SuppressWarnings("UnusedDeclaration")
-    public TileSingleAction() {
+    public TileVerticallyAction() {
         this(Utilities.actionsGlobalContext());
     }
 
-    public TileSingleAction(Lookup actionContext) {
+    public TileVerticallyAction(Lookup actionContext) {
         super(actionContext);
-        putValue(NAME, Bundle.CTL_TileSingleActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileSingle20.png", false));
+        putValue(NAME, Bundle.CTL_TileVerticallyActionName());
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileVertically20.png", false));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        getTileable().tileSingle();
+        getTileable().tileVertically();
     }
 
     @Override
     public Action createContextAwareInstance(Lookup actionContext) {
-        return new TileSingleAction(actionContext);
+        return new TileVerticallyAction(actionContext);
     }
-
 }

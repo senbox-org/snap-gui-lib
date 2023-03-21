@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -28,38 +28,38 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * The "Tile Evenly" action.
+ * The "Tile Horizontally" action.
  *
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileEvenlyAction" )
+@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileHorizontallyAction")
+@ActionRegistration(displayName = "#CTL_TileHorizontallyActionName", lazy = false)
 @ActionReferences({
-        @ActionReference(path = "Menu/Window", position = 220),
-        @ActionReference(path = "Toolbars/Window Arrangement", position = 20)
+        @ActionReference(path = "Menu/Window", position = 201, separatorBefore = 200),
+        @ActionReference(path = "Toolbars/Window Arrangement", position = 0)
 })
-@ActionRegistration(displayName = "#CTL_TileEvenlyActionName", lazy = false )
-@NbBundle.Messages("CTL_TileEvenlyActionName=Tile Evenly")
-public class TileEvenlyAction extends TileAction {
+@NbBundle.Messages("CTL_TileHorizontallyActionName=Tile Horizontally")
+public class TileHorizontallyAction extends TileAction {
 
     @SuppressWarnings("UnusedDeclaration")
-    public TileEvenlyAction() {
+    public TileHorizontallyAction() {
         this(Utilities.actionsGlobalContext());
     }
 
-    public TileEvenlyAction(Lookup actionContext) {
+    public TileHorizontallyAction(Lookup actionContext) {
         super(actionContext);
-        putValue(NAME, Bundle.CTL_TileEvenlyActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileEvenly20.png", false));
+        putValue(NAME, Bundle.CTL_TileHorizontallyActionName());
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileHorizontally20.png", false));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        getTileable().tileEvenly();
+        getTileable().tileHorizontally();
     }
 
     @Override
     public Action createContextAwareInstance(Lookup actionContext) {
-        return new TileEvenlyAction(actionContext);
+        return new TileHorizontallyAction(actionContext);
     }
 }

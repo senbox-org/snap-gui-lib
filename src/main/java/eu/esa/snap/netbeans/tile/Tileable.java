@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile;
+package eu.esa.snap.netbeans.tile;
 
 /**
  * Something that can be arranged in tiles. Looked-up from global action context by

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
 import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;

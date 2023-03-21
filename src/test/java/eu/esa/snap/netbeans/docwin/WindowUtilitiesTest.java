@@ -1,4 +1,4 @@
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
 import org.junit.After;
 import org.junit.Test;
@@ -15,15 +15,15 @@ import static org.junit.Assert.assertEquals;
 public class WindowUtilitiesTest {
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         WindowUtilities.tcProvider = WindowUtilities.DEFAULT_TC_PROVIDER;
     }
 
     @Test
-    public void testGetUniqueTitle() throws Exception {
+    public void testGetUniqueTitle() {
         WindowUtilities.tcProvider = () -> Arrays.asList(createTC("A"),
-                                                         createMyTC("B"),
-                                                         createTC("C"));
+                createMyTC("B"),
+                createTC("C"));
 
         assertEquals("A (2)", WindowUtilities.getUniqueTitle("A", TopComponent.class));
         assertEquals("B (2)", WindowUtilities.getUniqueTitle("B", TopComponent.class));
@@ -37,12 +37,12 @@ public class WindowUtilitiesTest {
     }
 
     @Test
-    public void testGetOpened() throws Exception {
+    public void testGetOpened() {
         WindowUtilities.tcProvider = () -> Arrays.asList(createMyOtherTC("A"),
-                                                         createMyTC("B"),
-                                                         createTC("C"),
-                                                         createTC("D"),
-                                                         createMyOtherTC("E"));
+                createMyTC("B"),
+                createTC("C"),
+                createTC("D"),
+                createMyOtherTC("E"));
         assertEquals(5, WindowUtilities.getOpened(TopComponent.class).count());
         assertEquals(3, WindowUtilities.getOpened(MyTopComponent.class).count());
         assertEquals(2, WindowUtilities.getOpened(MyOtherTopComponent.class).count());
@@ -50,19 +50,19 @@ public class WindowUtilitiesTest {
     }
 
     @Test
-    public void testGetOpenedWithContainer() throws Exception {
+    public void testGetOpenedWithContainer() {
         WindowUtilities.tcProvider = () -> Arrays.asList(createMyOtherTC("A"),
-                                                         createMyTC("B"),
-                                                         createTC("C"),
-                                                         createMyContainerTC("D",
-                                                                             createTC("Da"),
-                                                                             createMyTC("Db")),
-                                                         createTC("E"),
-                                                         createMyOtherTC("F"),
-                                                         createMyContainerTC("G",
-                                                                             createTC("Ga"),
-                                                                             createMyOtherTC("Gb"),
-                                                                             createMyTC("Gc")));
+                createMyTC("B"),
+                createTC("C"),
+                createMyContainerTC("D",
+                        createTC("Da"),
+                        createMyTC("Db")),
+                createTC("E"),
+                createMyOtherTC("F"),
+                createMyContainerTC("G",
+                        createTC("Ga"),
+                        createMyOtherTC("Gb"),
+                        createMyTC("Gc")));
         assertEquals(12, WindowUtilities.getOpened(TopComponent.class).count());
         assertEquals(6, WindowUtilities.getOpened(MyTopComponent.class).count());
         assertEquals(3, WindowUtilities.getOpened(MyOtherTopComponent.class).count());

@@ -15,7 +15,7 @@
  */
 package org.esa.snap.netbeans.tile.cli;
 
-import org.esa.snap.netbeans.tile.TileUtilities;
+import eu.esa.snap.netbeans.tile.TileUtilities;
 
 import java.io.File;
 import java.io.FileWriter;

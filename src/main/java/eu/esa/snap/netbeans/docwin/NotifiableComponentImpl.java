@@ -1,4 +1,4 @@
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
 import org.openide.windows.TopComponent;
 

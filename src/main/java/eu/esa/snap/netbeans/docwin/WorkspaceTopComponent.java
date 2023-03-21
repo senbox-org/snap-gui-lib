@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.esa.snap.netbeans.docwin;
+package eu.esa.snap.netbeans.docwin;
 
-import org.esa.snap.netbeans.tile.TileUtilities;
-import org.esa.snap.netbeans.tile.Tileable;
+import eu.esa.snap.netbeans.tile.TileUtilities;
+import eu.esa.snap.netbeans.tile.Tileable;
 import org.netbeans.swing.tabcontrol.*;
 import org.netbeans.swing.tabcontrol.event.TabActionEvent;
 import org.openide.DialogDescriptor;
@@ -121,8 +121,8 @@ public class WorkspaceTopComponent extends TopComponent implements WindowContain
 
         DefaultTabDataModel tabDataModel = new DefaultTabDataModel();
         tabbedContainer = new TabbedContainer(tabDataModel,
-                                              TabbedContainer.TYPE_EDITOR,
-                                              WinsysInfoForTabbedContainer.getDefault(new MyWinsysInfoForTabbedContainer()));
+                TabbedContainer.TYPE_EDITOR,
+                WinsysInfoForTabbedContainer.getDefault(new MyWinsysInfoForTabbedContainer()));
         tabbedContainer.setVisible(false);
 
         desktopPane = new JDesktopPane();
@@ -342,11 +342,11 @@ public class WorkspaceTopComponent extends TopComponent implements WindowContain
             TabData tab = tabbedContainer.getModel().getTab(i);
             JInternalFrame internalFrame = tabToFrameMap.get(tab);
             SubComponent subComponent = new SubComponent(internalFrame.getTitle(),
-                                                         internalFrame.getToolTipText(),
-                                                         activator,
-                                                         internalFrame.isSelected(),
-                                                         getTopComponent(internalFrame).getLookup(),
-                                                         internalFrame.isShowing());
+                    internalFrame.getToolTipText(),
+                    activator,
+                    internalFrame.isSelected(),
+                    getTopComponent(internalFrame).getLookup(),
+                    internalFrame.isShowing());
             internalFrameMap.put(subComponent, internalFrame);
             subComponents[i] = subComponent;
         }
