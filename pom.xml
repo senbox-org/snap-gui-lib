@@ -7,11 +7,10 @@
     <groupId>eu.esa.snap.netbeans</groupId>
     <artifactId>snap-gui-lib</artifactId>
     <version>1.0</version>
+    <packaging>nbm</packaging>
 
-    <description>Provides "document windows" for NetBeans Platform applications. Document windows are TopComponents which
-        retain a selected state even after deactivation and can be undocked/floated into a special workspace TopComponent.
-        The latter is based on JDesktopPane and JInternalFrame.
-    </description>
+    <description>Provides "document windows" for NetBeans Platform applications and actions allowing to arrange
+        editor windows in various layouts: tile horizontally, vertically, evenly. </description>
     <organization>
         <name>Brockmann Consult GmbH</name>
         <url>https://www.brockmann-consult.de/</url>
@@ -68,12 +67,12 @@
                 <version>3.13</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <author>Norman Fomferra, Brockmann Consult GmbH</author>
                     <licenseName>GPL 3</licenseName>
                     <licenseFile>LICENSE.txt</licenseFile>
-                    <codeNameBase>org.esa.snap.netbeans.docwin</codeNameBase>
+                    <codeNameBase>eu.esa.snap.netbeans</codeNameBase>
                     <publicPackages>
-                        <package>org.esa.snap.netbeans.docwin</package>
+                        <package>eu.esa.snap.netbeans.docwin</package>
+                        <package>eu.esa.snap.netbeans.tile</package>
                     </publicPackages>
                     <requiresRestart>false</requiresRestart>
                 </configuration>
@@ -100,6 +99,26 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-ui</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-dialogs</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-windows</artifactId>
