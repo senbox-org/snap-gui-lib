@@ -33,7 +33,7 @@ import java.awt.event.ActionEvent;
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileHorizontallyAction")
+@ActionID(category = "Window", id = "eu.esa.snap.netbeans.tile.TileHorizontallyAction")
 @ActionRegistration(displayName = "#CTL_TileHorizontallyActionName", lazy = false)
 @ActionReferences({
         @ActionReference(path = "Menu/Window", position = 201, separatorBefore = 200),
@@ -50,7 +50,7 @@ public class TileHorizontallyAction extends TileAction {
     public TileHorizontallyAction(Lookup actionContext) {
         super(actionContext);
         putValue(NAME, Bundle.CTL_TileHorizontallyActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileHorizontally20.png", false));
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("eu/esa/snap/netbeans/tile/icons/TileHorizontally20.png", false));
     }
 
     @Override

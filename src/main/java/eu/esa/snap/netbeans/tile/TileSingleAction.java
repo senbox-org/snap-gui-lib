@@ -33,7 +33,7 @@ import java.awt.event.ActionEvent;
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileSingleAction")
+@ActionID(category = "Window", id = "eu.esa.snap.netbeans.tile.TileSingleAction")
 @ActionRegistration(displayName = "#CTL_TileSingleActionName", lazy = false)
 @ActionReferences({
         @ActionReference(path = "Menu/Window", position = 230, separatorAfter = 235),
@@ -50,7 +50,7 @@ public class TileSingleAction extends TileAction {
     public TileSingleAction(Lookup actionContext) {
         super(actionContext);
         putValue(NAME, Bundle.CTL_TileSingleActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileSingle20.png", false));
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("eu/esa/snap/netbeans/tile/icons/TileSingle20.png", false));
     }
 
     @Override

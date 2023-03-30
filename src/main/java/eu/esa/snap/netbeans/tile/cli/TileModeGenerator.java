@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.netbeans.tile.cli;
+package eu.esa.snap.netbeans.tile.cli;
 
 import eu.esa.snap.netbeans.tile.TileUtilities;
 

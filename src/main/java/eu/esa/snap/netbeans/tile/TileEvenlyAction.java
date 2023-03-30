@@ -33,7 +33,7 @@ import java.awt.event.ActionEvent;
  * @author Norman Fomferra
  * @since 1.0
  */
-@ActionID(category = "Window", id = "org.esa.snap.netbeans.tile.TileEvenlyAction")
+@ActionID(category = "Window", id = "eu.esa.snap.netbeans.tile.TileEvenlyAction")
 @ActionReferences({
         @ActionReference(path = "Menu/Window", position = 220),
         @ActionReference(path = "Toolbars/Window Arrangement", position = 20)
@@ -50,7 +50,7 @@ public class TileEvenlyAction extends TileAction {
     public TileEvenlyAction(Lookup actionContext) {
         super(actionContext);
         putValue(NAME, Bundle.CTL_TileEvenlyActionName());
-        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("org/esa/snap/netbeans/tile/icons/TileEvenly20.png", false));
+        putValue(SMALL_ICON, ImageUtilities.loadImageIcon("eu/esa/snap/netbeans/tile/icons/TileEvenly20.png", false));
     }
 
     @Override
