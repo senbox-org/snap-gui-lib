@@ -6,7 +6,7 @@
 
     <groupId>eu.esa.snap.netbeans</groupId>
     <artifactId>snap-gui-lib</artifactId>
-    <version>1.1</version>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>nbm</packaging>
 
     <description>Provides "document windows" for NetBeans Platform applications and actions allowing to arrange
