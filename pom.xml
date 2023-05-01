@@ -6,7 +6,7 @@
 
     <groupId>eu.esa.snap.netbeans</groupId>
     <artifactId>snap-gui-lib</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>nbm</packaging>
 
     <description>Provides "document windows" for NetBeans Platform applications and actions allowing to arrange
@@ -25,7 +25,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <netbeans.version>RELEASE82</netbeans.version>
+        <netbeans.version>RELEASE100</netbeans.version>
     </properties>
 
     <repositories>
